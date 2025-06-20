@@ -1,12 +1,51 @@
-
-try:
-    num1 = float(input("Введите первое число: "))
-    num2 = float(input("Введите второе число: "))
-    result = num1 / num2
-except ValueError:
-    print("Ошибка: введено не число!")
-except ZeroDivisionError:
-    print("Ошибка: Деление на ноль!")
-finally:
-    print("Файл закрыт")
-print(f"Результат: {result}")
+def get_number(prompt):
+    while True:
+        try:
+            number = float(input(prompt))
+            if number.is_integer():
+                return int(number)
+            return number
+        except ValueError:
+            print("Ошибка: Введено не число.")
+def get_operation():
+    message = '''
+Выберете математическую операцию:
++ : Сложение
+- : Вычитание
+/ : Деление
+* : Умножение
+Ваш выбор:
+'''
+    correct_operations = '+-/*'
+    operation = input(message)
+    while operation not in correct_operations:
+        print('Такая операция недоступна. Повторите попытку.')
+        operation = input(message)
+    return operation
+def calculate(num1, num2, operation):
+    result = None
+    if operation == '+':
+        result = num1 + num2
+    elif operation == '-':
+        result = num1 - num2
+    elif operation == '/':
+        try:
+            result = num1 / num2
+        except ZeroDivisionError:
+            result = "Ошибка: Деление на ноль."
+    elif operation == '*':
+        result = num1 * num2
+    return result
+def main():
+    num1 = get_number("Введите первое число: ")
+    num2 = get_number("Введите второе число: ")
+    operation = get_operation()
+    result = calculate(num1, num2, operation)
+    print("Результат:", result)
+main()
+while True:
+    decision = (input('Продолжить? (да/нет) ')).lower()
+    if decision == 'да':
+        main()
+    elif decision == 'нет':
+        break
