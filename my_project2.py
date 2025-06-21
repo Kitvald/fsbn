@@ -1,51 +1,28 @@
-def get_number(prompt):
-    while True:
-        try:
-            number = float(input(prompt))
-            if number.is_integer():
-                return int(number)
-            return number
-        except ValueError:
-            print("Ошибка: Введено не число.")
-def get_operation():
-    message = '''
-Выберете математическую операцию:
-+ : Сложение
-- : Вычитание
-/ : Деление
-* : Умножение
-Ваш выбор:
-'''
-    correct_operations = '+-/*'
-    operation = input(message)
-    while operation not in correct_operations:
-        print('Такая операция недоступна. Повторите попытку.')
-        operation = input(message)
-    return operation
-def calculate(num1, num2, operation):
-    result = None
-    if operation == '+':
+try:
+    print("Доступные операции:")
+    print("1 - Сложение")
+    print("2 - Вычитание")
+    print("3 - Умножение")
+    print("4 - Деление")
+
+    operation = input("Выберите операцию (1/2/3/4): ")
+
+    num1 = int(input("Введите первое число: "))
+    num2 = int(input("Введите второе число: "))
+
+    if operation == '1':
         result = num1 + num2
-    elif operation == '-':
+        print(f"Результат сложения: {result}")
+    elif operation == '2':
         result = num1 - num2
-    elif operation == '/':
-        try:
-            result = num1 / num2
-        except ZeroDivisionError:
-            result = "Ошибка: Деление на ноль."
-    elif operation == '*':
+        print(f"Результат вычитания: {result}")
+    elif operation == '3':
         result = num1 * num2
-    return result
-def main():
-    num1 = get_number("Введите первое число: ")
-    num2 = get_number("Введите второе число: ")
-    operation = get_operation()
-    result = calculate(num1, num2, operation)
-    print("Результат:", result)
-main()
-while True:
-    decision = (input('Продолжить? (да/нет) ')).lower()
-    if decision == 'да':
-        main()
-    elif decision == 'нет':
-        break
+        print(f"Результат умножения: {result}")
+    elif operation == '4':
+        result = num1 / num2
+        print(f"Результат деления: {result}")
+except ValueError:
+    print("Ошибка: введено не число!")
+except ZeroDivisionError:
+    print("Ошибка: Деление на ноль!")
