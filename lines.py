@@ -1,10 +1,7 @@
 def max_number(a,b):
     if a > b:
         return a
-    if a < b:
-        return b
-    else: a==b
-    print("Цифры равны")
+    else: return b
 
 a = int(input("введите число первое: "))
 b = int(input("введите число второе: "))
@@ -13,14 +10,13 @@ print(number)
 
 
 def empty_function():
+    pass_function = empty_function()
+    print(pass_function)
     pass
-
-pass_function = empty_function
-print(pass_function)
 
 
 def even_numbers(n):
-    for i in range(0, n, 2):
+    for i in range(0, n+1, 2):
         yield i
 
 n = int(input("введите число : "))
