@@ -1,4 +1,4 @@
-def max_number(a,b):
+def max_number(a, b):
     if a > b:
         return a
     else:
@@ -16,7 +16,7 @@ def empty_function():
 
 a = int(input("введите число первое: "))
 b = int(input("введите число второе: "))
-number = max_number(a,b)
+number = max_number(a, b)
 print(number)
 
 pass_function = empty_function()
