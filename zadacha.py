@@ -23,14 +23,15 @@ def test_max_number():
 test_max_number()
 print("Все тесты пройдены!")
 
-a = int(input("введите число первое: "))
-b = int(input("введите число второе: "))
+a = int(input("Введите число первое: "))
+b = int(input("Введите число второе: "))
 number = max_number(a, b)
 print(number)
 
 pass_function = empty_function()
 print(pass_function)
 
-n = int(input("введите число для генератора : "))
-gen = even_numbers(n)
-print(list(gen))
+n = int(input("Введите число для генератора : "))
+print("Чётные числа:")
+for num in even_numbers(n):
+    print(num)
