@@ -14,12 +14,11 @@ def empty_function():
     pass
 
 
-
-
 def test_max_number():
     assert max_number(3, 2) == 3, "Ошибка: max_number(3, 2) должна быть равна 3"
     assert max_number(-1, 1) == 1, "Ошибка: max_number(-1, 1) должна быть равна 1"
-    assert max_number(0, 0) == 0, "Ошибка: max_number(0, 0) должна быть равна 0"
+    assert max_number(1, 1) == 1, "Ошибка: max_number(1, 1) должна быть равна 1"
+
 
 test_max_number()
 print("Все тесты пройдены!")
@@ -32,6 +31,6 @@ print(number)
 pass_function = empty_function()
 print(pass_function)
 
-n = int(input("введите число : "))
+n = int(input("введите число для генератора : "))
 gen = even_numbers(n)
 print(list(gen))
