@@ -14,11 +14,15 @@ def empty_function():
     pass
 
 
-def max_number_test(a, b):
-    result = max_number(a, b)
-    assert result == max(a, b), f"Функция вернула {result}, ожидалось {max(a, b)}"
-    return True
 
+
+def test_max_number():
+    assert max_number(3, 2) == 3, "Ошибка: max_number(3, 2) должна быть равна 3"
+    assert max_number(-1, 1) == 1, "Ошибка: max_number(-1, 1) должна быть равна 1"
+    assert max_number(0, 0) == 0, "Ошибка: max_number(0, 0) должна быть равна 0"
+
+test_max_number()
+print("Все тесты пройдены!")
 
 a = int(input("введите число первое: "))
 b = int(input("введите число второе: "))
@@ -31,6 +35,3 @@ print(pass_function)
 n = int(input("введите число : "))
 gen = even_numbers(n)
 print(list(gen))
-
-test_result = max_number_test(a, b)
-print("Результат теста:", test_result)
