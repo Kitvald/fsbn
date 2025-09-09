@@ -1,10 +1,9 @@
+password = 'qwerty'
+
 while True:
-    a = input("Введите ваш пароль: ")
-    password = "qwerty"
+    a = input('Введите пароль:  ')
     if a == password:
-        print("Пароль введен верно")
+        print("Пароль верный")
         break
     else:
-        a != password
-        print("Пароль введен не верно")
-        # следует ли добавить break после введения неправильного пароля
+        print("Пароль не верный")
