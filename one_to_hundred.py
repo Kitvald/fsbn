@@ -1,16 +1,19 @@
 
-def even_numbers(n):
-    for i in range(2, n-1, 2):
-        yield i
-n = int("102 ")
-nut = [num for num in even_numbers(n)]
-print(sum(nut))
 
-def odd_numbers(n):
-    for i in range(1, n-1, 2):
-        yield i
-n = int("11")
-nat = [(lambda nom: nom*nom)(nom) for nom in odd_numbers(n)]
-print(nat)
+data =  [i for i in range(0, 101) if i % 2 == 0]
+print(sum(data))
 
 
+data1 =  [i * i for i in range(0, 10) if i % 2 == 1]
+print(data1)
+
+
+def numbers():
+    counts = 0
+    while True:
+        current_number = int(input("Введите число: "))
+        if current_number <= 0:
+            break
+        counts += 1
+    return counts
+print(numbers())
