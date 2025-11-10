@@ -1,11 +1,11 @@
 
 
-data =  [i for i in range(0, 101) if i % 2 == 0]
-print(sum(data))
+even_number =  [i for i in range(0, 101) if i % 2 == 0]
+print(sum(even_number))
 
 
-data1 =  [i * i for i in range(0, 10) if i % 2 == 1]
-print(data1)
+odd_number =  [i * i for i in range(0, 10) if i % 2 == 1]
+print(odd_number)
 
 
 def numbers():
