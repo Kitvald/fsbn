@@ -1,13 +1,3 @@
-
-
-even_number =  [i for i in range(0, 101) if i % 2 == 0]
-print(sum(even_number))
-
-
-odd_number =  [i * i for i in range(0, 10) if i % 2 == 1]
-print(odd_number)
-
-
 def numbers():
     counts = 0
     while True:
@@ -16,4 +6,12 @@ def numbers():
             break
         counts += 1
     return counts
+
+
+even_number =  [i for i in range(0, 101) if i % 2 == 0]
+print(sum(even_number))
+
+odd_number =  [i * i for i in range(0, 10) if i % 2 == 1]
+print(odd_number)
+
 print(numbers())
